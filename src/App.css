@@ -1,8 +1,32 @@
 .main-bg {
-  height: 500px;
+  height: 480px;
   /*background-image: url('./img/starbucks-bg.jpg');*/
   background-size: cover;
   background-position: center;
+}
+
+.row {
+  padding-top: 30px;
+}
+
+h4 {
+  padding-top: 20px;
+}
+
+.best {
+  color: white;
+  background-color: #1e3932;
+  font-size: 25px;
+  text-align : center;
+}
+
+.bottom {
+  color: white;
+  background-color: #282c34;
+  font-size: 15px;
+  text-align : center;
+  height: 200px;
+  padding-top: 130px;
 }
 
 .App {
