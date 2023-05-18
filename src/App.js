@@ -7,11 +7,13 @@ import a from './img/americano.jpg';
 import c from './img/caramel.jpg';
 import e from './img/espresso.jpg';
 import data from './data.js';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
+import Detail from './routes/Detail.js';
 
 function App() {
 
   let [coffee] = useState(data);
+  let navigate = useNavigate();
 
   return (
     <div className="App">
@@ -19,17 +21,19 @@ function App() {
         <Container>
           <Navbar.Brand href="#home">Starbucks</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Coffee</Nav.Link>
-            <Nav.Link href="#features">Menu</Nav.Link>
-            <Nav.Link href="#pricing">Store</Nav.Link>
+            <Nav.Link onClick={() => { navigate('/coffee') }}>Coffee</Nav.Link>
+            <Nav.Link onClick={() => { navigate('/menu') }}>Menu</Nav.Link>
+            <Nav.Link onClick={() => { navigate('/detail') }}>Detail</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
 
       <Routes>
-        <Route path="/" element={<div>메인페이지임</div>}/>
-        <Route path="/detail" element={<div>상세페이지임</div>}/>
-        <Route path="/about" element={<div>어바웃페이지임</div>}/>
+        <Route path="/" element={<div>메인</div>}/>
+        <Route path="/coffee" element={<Coffee/>}/>
+        <Route path="/menu" element={<Menu/>}/>
+        <Route path="/detail" element={<Detail coffee={coffee}/>}/>
+        <Route path="*" element={<div>없는페이지</div>}/>
       </Routes>
 
       <div className="main-bg" style={{ backgroundImage : 'url('+ bg +')' }}> </div>
