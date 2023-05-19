@@ -1,4 +1,5 @@
-function Menu() {
+function Menu(props) {
+
     return (
         <div className="container">
             <div className="row">
@@ -16,4 +17,4 @@ function Menu() {
     )
 }
 
-export default Detail;
+export default Menu;

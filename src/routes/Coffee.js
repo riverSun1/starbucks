@@ -1,4 +1,5 @@
-function Coffee() {
+function Coffee(props) {
+
     return (
         <div className="container">
             <div className="row">
@@ -16,4 +17,4 @@ function Coffee() {
     )
 }
 
-export default Detail;
+export default Coffee;
